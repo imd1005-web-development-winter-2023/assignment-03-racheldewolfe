@@ -2,41 +2,106 @@
   CSS File
 */
 
-/*
- VARIABLES
+/*colors
+#38453a - dark green
+#b0c1a8 - mid green
+#dbe9d4 - light green
+#a09477 - gold
+#e4e4e4 - gray
 */
-:root {
-  /* Core colours */
-  /* https://coolors.co/palette/e63946-f1faee-a8dadc-457b9d-1d3557 */
-  --colour-amaranth: #e63946;
-  --colour-peppermint: #f1faee;
-  --colour-aquaisland: #a8dadc;
-  --colour-wedgewood: #457b9d;
-  --colour-cello: #1d3557;
 
-  /* Header configuration */
-  --header-heading-colour: var(--colour-peppermint);
-
-  /* Body configuration */
-  --body-default-colour: var(--colour-cello);
-  --body-background-colour: var(--colour-peppermint);
+body{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display:grid;
+  grid-template-rows: 3fr 15fr 5fr 1fr;
 }
 
-/*
-  PAGE / BODY
-*/
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--body-default-colour);
-  background-color: var(--body-background-colour);
+footer{
+  grid-row-start: 4;
+  text-align: center;
+  font-size: 12px;
+}
+
+footer p {
+  padding-top: 5px;
+}
+
+header {
+  background-color:#38453a;
+  font-family: optima;
+  color:#a09477;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  padding: 3rem;
+}
+
+.header-company {
+  grid-column-start: 1;
+  display: flex;
+}
+
+.header-company img {
+  padding: 1rem;
+}
+
+.header-buttons{
+  grid-column-start: 2;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header-buttons button {
+  background-color: #b0c1a8;
+  color:#38453a;
+  /* color: #e4e4e4; */
+  height: 40px;
+  width: 100px;
+  border-radius: 8px;
+  margin: 5px;
+  border: solid 1px #a09477;
+  font-weight: 600;
+}
+
+.header-buttons button:hover{
+  background-color: #bacbb2;
 }
 
 main {
-  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.stats {
+grid-column-start: 1;
+background-color:#b0c1a8 ;
+}
+
+.stats-top {
+  background-color: #dbe9d4;
+  margin: 2rem;
+  padding: 2rem;
+}
+
+.stats-bottom {
+  background-color: #dbe9d4;
+  margin: 2rem;
+  padding: 2rem;
+}
+
+
+.list {
+  grid-column-start:2;
+  background-color: #e4e4e4;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr 1fr 10fr;
+}
+
+form{
+  grid-row-start: 2;
 }
 
 /*
