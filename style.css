@@ -97,7 +97,7 @@ background-color:#b0c1a8 ;
   padding: 2rem;
   display: grid;
   grid-template-columns: 3fr 1fr;
-  grid-template-rows: 1fr 1fr 10fr;
+  grid-template-rows: 1fr 1fr 8fr;
 }
 
 form{
