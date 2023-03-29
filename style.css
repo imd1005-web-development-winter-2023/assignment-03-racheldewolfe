@@ -10,16 +10,18 @@
 #e4e4e4 - gray
 */
 
-body{
+
+body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  display:grid;
-  grid-template-rows: 3fr 15fr 5fr 1fr;
+  display: grid;
+  grid-template-rows: 2fr 18fr 20px;
 }
 
-footer{
+footer {
   grid-row-start: 4;
   text-align: center;
   font-size: 12px;
+  background-color: white;
 }
 
 footer p {
@@ -27,12 +29,18 @@ footer p {
 }
 
 header {
-  background-color:#38453a;
+  background-color: #38453a;
   font-family: optima;
-  color:#a09477;
+  color: #a09477;
   display: grid;
   grid-template-columns: 3fr 1fr;
-  padding: 3rem;
+  padding: 1rem;
+  border-bottom: solid 2px #a09477;
+}
+
+.header-company h2 {
+  margin-top: 1.8rem;
+  font-size: 32px;
 }
 
 .header-company {
@@ -41,18 +49,21 @@ header {
 }
 
 .header-company img {
-  padding: 1rem;
+  margin-right: 1rem;
+  width: 100px;
+  height: 100px;
 }
 
-.header-buttons{
+.header-buttons {
   grid-column-start: 2;
   display: flex;
   justify-content: flex-end;
+  margin-top: 1.7rem;
 }
 
 .header-buttons button {
   background-color: #b0c1a8;
-  color:#38453a;
+  color: #38453a;
   /* color: #e4e4e4; */
   height: 40px;
   width: 100px;
@@ -60,49 +71,130 @@ header {
   margin: 5px;
   border: solid 1px #a09477;
   font-weight: 600;
+  box-shadow: inset 00px 0px 10px -2px #38453a;
 }
 
-.header-buttons button:hover{
-  background-color: #bacbb2;
+.header-buttons button:hover {
+  background-color: #c6d7be;
 }
 
 main {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 4fr;
   grid-row-start: 2;
   grid-row-end: 4;
 }
 
 .stats {
-grid-column-start: 1;
-background-color:#b0c1a8 ;
+  grid-column-start: 1;
+  background-color: #b0c1a8;
+  border-right: solid 2px #a09477;
 }
 
-.stats-top {
+.stats img {
+  width: 20rem;
+  height: 16.2rem;
+}
+
+.stats-counter {
   background-color: #dbe9d4;
   margin: 2rem;
   padding: 2rem;
+  padding-top: 3rem;
+  height: 12rem;
+  border-radius: 15px;
+  box-shadow: inset 00px 0px 30px -2px #bacbb2;
+  color: #38453a;
+  text-align: center;
 }
 
-.stats-bottom {
-  background-color: #dbe9d4;
-  margin: 2rem;
-  padding: 2rem;
+.stats-counter h2 {
+  font-size: 48px;
 }
 
+.stats-counter p {
+  font-size: 18px;
+}
 
 .list {
-  grid-column-start:2;
-  background-color: #e4e4e4;
+  background-color:#e4e4e4
+}
+.list-top {
+  grid-column-start: 2;
   padding: 2rem;
   display: grid;
-  grid-template-columns: 3fr 1fr;
-  grid-template-rows: 1fr 1fr 8fr;
+  grid-template-rows: 50px 50px;
+  color: #38453a;
+  grid-template-columns: 4fr 1fr;
 }
 
-form{
-  grid-row-start: 2;
+.list-bottom {
+  grid-row-start: 3;
+  border: none;
+  display:grid;
+  padding: 2rem;
+  padding-top: 0rem;
+  
 }
+
+.list-bottom-items li {
+  list-style-type: none;
+  background-color: white;
+  border: none;
+  height: 3rem;
+  width: 800px;
+  padding: 1rem;
+  color: #38453a;
+  grid-column-start:1;
+  margin-bottom: 5px;
+}
+
+.list-bottom-remove {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.list-bottom-remove button {
+  background-color: #d7d6d6;
+  color: #38453a;
+  border: none;
+  height: 3rem;
+  width: 100px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+
+.plsWork {
+  display:flex;
+}
+
+form {
+  grid-row-start: 2;
+  display: flex;
+}
+
+.form-input {
+  border: none;
+  height: 3rem;
+  width: 800px;
+  padding: 1rem;
+  color: #38453a;
+}
+
+.form-submit {
+  background-color: #d7d6d6;
+  color: #38453a;
+  border: none;
+  height: 3rem;
+  width: 100px;
+  margin-left: 5px;
+}
+
+.form-submit:hover {
+  background-color: #c5c4c4;
+}
+
 
 /*
   Screen reader text utility class
@@ -118,3 +210,32 @@ form{
   white-space: nowrap;
   border-width: 0;
 }
+
+@media only screen and (max-width: 800px) {
+  .header-company h2 {
+    font-size: 28px;
+    margin-top: 1.2rem;
+  }
+
+  .header-company img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .header-buttons {
+    margin-top: 1.7rem;
+  }
+  
+  .header-buttons button {
+    height: 40px;
+    width: 100px;
+    border-radius: 8px;
+    /* margin: 5px; */
+}
+}
+
+/* @media screen and (min-width: 800px) {
+  .header-company h2 {
+    font-size: 60px;
+  }
+} */

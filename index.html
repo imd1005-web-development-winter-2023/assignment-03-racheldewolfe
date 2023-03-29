@@ -3,7 +3,7 @@
 
 <head>
   <!-- Set the page title -->
-  <title>Assignment 03</title>
+  <title>PanDoIt</title>
 
   <!-- Set the charset we're using to UTF-8 -->
   <meta charset="UTF-8" />
@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="style.css" />
 
   <!-- Set the Favicon  -->
-  <link rel="icon" href="./images/favicon/rocket.svg" type="image/svg+xml" />
+  <link rel="icon" href="./images/PandaLogoGold.png" type="image/png" />
 </head>
 <!--
 
@@ -40,7 +40,7 @@
   <header>
 
     <div class="header-company">
-      <img src="pandaLogo.png" alt="Company logo" />
+      <img src="./images/PandaLogoGold.png" alt="Company logo" />
       <h2>PanDoIt</h2>
     </div>
 
@@ -56,39 +56,32 @@
 
     <div class="stats">
 
-      <div class="stats-top">
+      <div class="stats-counter">
         <h2>1/2</h2>
         <p>Completed!</p>
       </div>
 
-      <div class="stats-bottom">
-        <h2>My Lists</h2>
-        <ul>
-          <li><button class="button">Daily Tasks</button> </li>
-        </ul>
-      </div>
-
+      <!-- <img src="./images/bamboo.png" alt="bamboo"/> -->
     </div>
 
     <div class="list">
-      <h1 class="list-header"> To Do List</h1>
 
-      <!-- <div class="list-buttons">
-        <button type="button">+ New Item</button>
-        <button type="button">Edit List</button>
-      </div> -->
+      <div class="list-top">
+        <h1 class="list-header"> To Do List</h1>
+        <form class="form" id="form">
+          <label for="add-item"></label>
+          <input class="form-input" type="text" name="item" id="form-input" placeholder="Enter a new todo" required />
+          <input class="form-submit" id="form-submit" type="submit" value="+ Add" />
+        </form>
+      </div>
 
-      <form class="add-item">
-        <label for="add-item"></label>
-        <input
-          type="text"
-          name="item"
-          id="add-item"
-          placeholder="Enter a new todo"
-          required
-        />
-        <input type="submit" value="+ Add" />
-      </form>
+      <div class="list-bottom">
+        <div class="plsWork">
+          <div id="list-bottom-items" class="list-bottom-items"></div>
+          <div id="list-bottom-remove" class="list-bottom-remove"></div>          
+        </div>
+
+      </div>
 
     </div>
 

@@ -1,44 +1,25 @@
 //
 //  JS File
-//  You may remove the code below - it's just boilerplate
 //
 
-//
-// Variables
-//
+const form = document.querySelector("#form");
+const item = document.querySelector("#form-input");
+const list = document.querySelector("#list-bottom-items");
+const remove = document.querySelector("#list-bottom-remove")
 
-// Constants
-const appID = "app";
-const headingText = "To do. To done. ✅";
+form.addEventListener("submit", addToList);
 
-// Variables
+function addToList(event) {
+  event.preventDefault();
+  console.log(item.value);
+  console.log("Item added");
 
-// DOM Elements
-let appContainer = document.getElementById(appID);
+  const myList = document.createElement("li");
+  const removeItem = document.createElement("button");
+  removeItem.textContent = "x";
+  myList.textContent = `${item.value}`;
+  list.appendChild(myList);
+  remove.appendChild(removeItem);
 
-//
-// Functions
-//
-
-// Add a heading to the app container
-function inititialise() {
-  // If anything is wrong with the app container then end
-  if (!appContainer) {
-    console.error("Error: Could not find app contianer");
-    return;
-  }
-
-  // Create an h1 and add it to our app
-  const h1 = document.createElement("h1");
-  h1.innerText = headingText;
-  appContainer.appendChild(h1);
-
-  // Init complete
-  console.log("App successfully initialised");
+  form.reset();
 }
-
-//
-// Inits & Event Listeners
-//
-
-inititialise();
