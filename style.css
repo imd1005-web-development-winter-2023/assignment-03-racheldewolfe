@@ -18,10 +18,11 @@
 }
 
 footer {
-  grid-row-start: 4;
+  grid-row-start: 3;
   text-align: center;
   font-size: 12px;
   background-color: white;
+  grid-column-start:1 ;
 }
 
 footer p {
@@ -82,7 +83,7 @@ main {
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-row-start: 2;
-  grid-row-end: 4;
+  grid-row-end: 3;
 }
 
 .stats {
@@ -140,7 +141,6 @@ main {
 
 .list-bottom-items {
   list-style-type: none;
-  overflow-y: scroll;
 }
 
 .list-bottom-items span {
@@ -153,6 +153,13 @@ main {
   color: #38453a;
   vertical-align:bottom;
   margin-bottom: 5px;
+}
+
+.list-bottom-items img {
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  vertical-align: baseline;
 }
 
 .list-bottom-items button {
@@ -199,6 +206,10 @@ form {
 
 .done > span {
   text-decoration: line-through;
+}
+
+.done > img.checkbox {
+  content:url("./images/checkbox-checked.svg");
 }
 
 /*

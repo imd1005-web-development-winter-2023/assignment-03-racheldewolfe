@@ -17,13 +17,14 @@ function addToList(event) {
 
   const myList = document.createElement("li");
   const spanItem = document.createElement("span");
-  const removeItem = document.createElement("button");
-  const doneItem = document.createElement("button");
+  const removeItem = document.createElement("img");
+  const doneItem = document.createElement("img");
   removeItem.addEventListener("click", removeFromList);
   doneItem.addEventListener("click", markDone);
-  removeItem.textContent = "x";
+  removeItem.src = "./images/remove.svg";
   spanItem.textContent = `${item.value}`;
-  doneItem.textContent = "done";
+  doneItem.src = "./images/checkbox-unchecked.svg";
+  doneItem.classList.add("checkbox");
   list.appendChild(myList);
   myList.appendChild(doneItem);
   myList.appendChild(spanItem);
