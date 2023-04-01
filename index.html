@@ -37,64 +37,62 @@
     -->
 
 <body>
-  <header>
+  <div class="body-wrapper">
+    <header>
 
-    <div class="header-company">
-      <img src="./images/PandaLogoGold.png" alt="Company logo" />
-      <h2>PanDoIt</h2>
-    </div>
-
-    <div class="header-buttons">
-      <button type="button">Login</button>
-      <button type="button">Sign Up</button>
-    </div>
-
-  </header>
-
-
-  <main>
-
-    <div class="stats">
-
-      <div class="stats-counter">
-        <h2 id="numerator">0</h2>
-        <p>out of</p>
-        <h2 id="denominator">0</h2>
-        <p>Completed!</p>
+      <div class="header-company">
+        <img src="./images/PandaLogoGold.png" alt="Company logo" />
+        <h2>PanDoIt</h2>
       </div>
 
-      <!-- <img src="./images/bamboo.png" alt="bamboo"/> -->
-    </div>
-
-    <div class="list">
-
-      <div class="list-top">
-        <h1 class="list-header"> To Do List</h1>
-        <form class="form" id="form">
-          <label for="add-item"></label>
-          <input class="form-input" type="text" name="item" id="form-input" placeholder="Enter a new todo" required />
-          <input class="form-submit" id="form-submit" type="submit" value="+ Add" />
-        </form>
+      <div class="header-buttons">
+        <button type="button">Login</button>
+        <button type="button">Sign Up</button>
       </div>
 
-      <div class="list-bottom">
-        <div class="plsWork">
-          <div id="list-bottom-items" class="list-bottom-items"></div>
-          <div id="list-bottom-remove" class="list-bottom-remove"></div>          
+    </header>
+
+
+    <main>
+
+      <div class="stats">
+
+        <div class="stats-counter">
+          <h2 id="numerator">0</h2>
+          <p>out of</p>
+          <h2 id="denominator">0</h2>
+          <p>Completed!</p>
         </div>
 
+        <!-- <img src="./images/bamboo.png" alt="bamboo"/> -->
       </div>
 
-    </div>
+      <div class="list">
 
-  </main>
+        <div class="list-top">
+          <h1 class="list-header"> To Do List</h1>
+          <form class="form" id="form">
+            <label for="add-item"></label>
+            <input class="form-input" type="text" name="item" id="form-input" placeholder="Enter a new todo" required />
+            <input class="form-submit" id="form-submit" type="submit" value="+ Add" />
+          </form>
+        </div>
 
-  <footer>
-    <p>&#169; PanDoIt 2023</p>
-  </footer>
+        <div class="list-bottom">
+            <div id="list-bottom-items" class="list-bottom-items"></div>
+        </div>
+        
+      </div>
 
-  <!-- This is where we add our awesome JavaScript code -->
-  <script src="./main.js"></script>
+    </main>
+
+    <footer>
+      <p>&#169; PanDoIt 2023</p>
+    </footer>
+
+    <!-- This is where we add our awesome JavaScript code -->
+    <script src="./main.js"></script>
+  </div>
 </body>
 
 </html>

@@ -5,16 +5,10 @@
 const form = document.querySelector("#form");
 const item = document.querySelector("#form-input");
 const list = document.querySelector("#list-bottom-items");
-const remove = document.querySelector("#list-bottom-remove")
-const denominator = document.querySelector("#denominator")
+const denominator = document.querySelector("#denominator");
+const numerator = document.querySelector("#numerator");
 
 form.addEventListener("submit", addToList);
-
-remove.addEventListener("click", removeFromList);
-
-if (addToList()) {
-  denominator = denominator + 1;
-}
 
 function addToList(event) {
   event.preventDefault();
@@ -22,21 +16,36 @@ function addToList(event) {
   console.log("Item added");
 
   const myList = document.createElement("li");
+  const spanItem = document.createElement("span");
   const removeItem = document.createElement("button");
+  const doneItem = document.createElement("button");
+  removeItem.addEventListener("click", removeFromList);
+  doneItem.addEventListener("click", markDone);
   removeItem.textContent = "x";
-  myList.textContent = `${item.value}`;
+  spanItem.textContent = `${item.value}`;
+  doneItem.textContent = "done";
   list.appendChild(myList);
-  remove.appendChild(removeItem);
+  myList.appendChild(doneItem);
+  myList.appendChild(spanItem);
+  myList.appendChild(removeItem);
+
+  denominator.textContent = list.childElementCount;
+
 
   form.reset();
 }
 
-function removeFromList(removeItem, myList) {
+function removeFromList(event) {
+  event.preventDefault();
+  list.removeChild(this.parentElement);
 
-  console.log("Item removed");
+  denominator.textContent = list.childElementCount;
+  numerator.textContent = list.querySelectorAll(".done").length;
+}
 
-  remove.removeChild(removeItem);
-  list.removeChild(myList);
-
+function markDone (event) {
+  event.preventDefault();
+  this.parentElement.classList.add("done");
+  numerator.textContent = list.querySelectorAll(".done").length;
 
 }

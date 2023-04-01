@@ -10,11 +10,11 @@
 #e4e4e4 - gray
 */
 
-
-body {
+.body-wrapper {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   display: grid;
   grid-template-rows: 2fr 18fr 20px;
+  height: 100vh;
 }
 
 footer {
@@ -118,6 +118,7 @@ main {
 
 .list {
   background-color:#e4e4e4
+  /* overflow */
 }
 .list-top {
   grid-column-start: 2;
@@ -134,44 +135,41 @@ main {
   display:grid;
   padding: 2rem;
   padding-top: 0rem;
-  
 }
 
-.list-bottom-items li {
+
+.list-bottom-items {
   list-style-type: none;
+  overflow-y: scroll;
+}
+
+.list-bottom-items span {
   background-color: white;
+  padding: 1rem;
   border: none;
+  display: inline-block;
   height: 3rem;
   width: 800px;
-  padding: 1rem;
   color: #38453a;
-  grid-column-start:1;
+  vertical-align:bottom;
   margin-bottom: 5px;
 }
 
-.list-bottom-remove {
-  display: flex;
-  flex-direction: column;
-}
-
-
-.list-bottom-remove button {
+.list-bottom-items button {
   background-color: #d7d6d6;
   color: #38453a;
   border: none;
   height: 3rem;
-  width: 100px;
+  width: 75px;
   margin-left: 5px;
+  margin-right: 5px;
   margin-bottom: 5px;
 }
 
-.list-bottom-remove button:hover {
+.list-bottom-items button:hover {
   background-color: #c5c4c4;
 }
 
-.plsWork {
-  display:flex;
-}
 
 form {
   grid-row-start: 2;
@@ -199,6 +197,9 @@ form {
   background-color: #c5c4c4;
 }
 
+.done > span {
+  text-decoration: line-through;
+}
 
 /*
   Screen reader text utility class
