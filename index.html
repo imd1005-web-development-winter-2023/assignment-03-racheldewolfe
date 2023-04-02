@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Set the page title -->
-    <title>Assignment 03</title>
 
-    <!-- Set the charset we're using to UTF-8 -->
-    <meta charset="UTF-8" />
+<head>
+  <!-- Set the page title -->
+  <title>PanDoIt</title>
 
-    <!-- Set the screens default zoom / scale to 1 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Set the charset we're using to UTF-8 -->
+  <meta charset="UTF-8" />
 
-    <!-- We are using a CSS Reset file to standardize browser default css -->
-    <link rel="stylesheet" href="reset.css" />
+  <!-- Set the screens default zoom / scale to 1 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- This is where all of our awesome CSS code goes -->
-    <link rel="stylesheet" href="style.css" />
+  <!-- We are using a CSS Reset file to standardize browser default css -->
+  <link rel="stylesheet" href="reset.css" />
 
-    <!-- Set the Favicon  -->
-    <link rel="icon" href="./images/favicon/rocket.svg" type="image/svg+xml" />
-  </head>
-  <body>
-    <!--
+  <!-- This is where all of our awesome CSS code goes -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Set the Favicon  -->
+  <link rel="icon" href="./images/PandaLogoGold.png" type="image/png" />
+</head>
+<!--
 
       ADD YOUR ASSIGNMENT 03 CODE
 
@@ -35,11 +35,62 @@
       - Have you conducted a code review and left a GitHub Issue on your team member's repo?
 
     -->
+
+<body>
+  <div class="body-wrapper">
+    <header>
+
+      <div class="header-company">
+        <img src="./images/PandaLogoGold.png" alt="Company logo" />
+        <h2>PanDoIt</h2>
+      </div>
+
+      <div class="header-buttons">
+        <button type="button">Login</button>
+        <button type="button">Sign Up</button>
+      </div>
+
+    </header>
+
+
     <main>
-      <div id="app"></div>
+
+      <div class="stats">
+
+        <div class="stats-counter">
+          <h2 id="numerator">0</h2>
+          <p>out of</p>
+          <h2 id="denominator">0</h2>
+          <p>Completed!</p>
+        </div>
+
+      </div>
+
+      <div class="list">
+
+        <div class="list-top">
+          <h1 class="list-header"> To Do List</h1>
+          <form class="form" id="form">
+            <input class="form-input" type="text" name="item" id="form-input" placeholder="Enter a new todo" required />
+            <input class="form-submit" id="form-submit" type="submit" value="+ Add" />
+          </form>
+        </div>
+
+        <div class="list-bottom">
+            <div id="list-bottom-items" class="list-bottom-items"></div>
+        </div>
+        
+      </div>
+
     </main>
+
+    <footer>
+      <p>&#169; PanDoIt 2023</p>
+    </footer>
 
     <!-- This is where we add our awesome JavaScript code -->
     <script src="./main.js"></script>
-  </body>
+  </div>
+</body>
+
 </html>

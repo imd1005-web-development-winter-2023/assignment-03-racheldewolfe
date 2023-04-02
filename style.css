@@ -2,41 +2,218 @@
   CSS File
 */
 
-/*
- VARIABLES
+/*colors
+#38453a - dark green
+#b0c1a8 - mid green
+#dbe9d4 - light green
+#a09477 - gold
+#e4e4e4 - gray
 */
-:root {
-  /* Core colours */
-  /* https://coolors.co/palette/e63946-f1faee-a8dadc-457b9d-1d3557 */
-  --colour-amaranth: #e63946;
-  --colour-peppermint: #f1faee;
-  --colour-aquaisland: #a8dadc;
-  --colour-wedgewood: #457b9d;
-  --colour-cello: #1d3557;
 
-  /* Header configuration */
-  --header-heading-colour: var(--colour-peppermint);
+.body-wrapper {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display: grid;
+  grid-template-rows: 150px 3fr 20px;
+  height: 100vh;
 
-  /* Body configuration */
-  --body-default-colour: var(--colour-cello);
-  --body-background-colour: var(--colour-peppermint);
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
 }
 
-/*
-  PAGE / BODY
-*/
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--body-default-colour);
-  background-color: var(--body-background-colour);
+footer {
+  grid-area: footer;
+  text-align: center;
+  font-size: 12px;
+  background-color: white;
+}
+
+footer p {
+  padding-top: 5px;
+}
+
+header {
+  background-color: #38453a;
+  font-family: optima;
+  color: #a09477;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  padding: 1rem;
+  border-bottom: solid 2px #a09477;
+  grid-area: header;
+}
+
+.header-company h2 {
+  margin-top: 2rem;
+  font-size: 32px;
+}
+
+.header-company {
+  grid-column-start: 1;
+  display: flex;
+}
+
+.header-company img {
+  margin-right: 1rem;
+  width: 100px;
+  height: 100px;
+  margin-top: 10px;
+}
+
+.header-buttons {
+  grid-column-start: 2;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.header-buttons button {
+  background-color: #b0c1a8;
+  color: #38453a;
+  height: 40px;
+  width: 100px;
+  border-radius: 8px;
+  margin: 5px;
+  border: solid 1px #a09477;
+  font-weight: 600;
+  box-shadow: inset 00px 0px 10px -2px #38453a;
+}
+
+.header-buttons button:hover {
+  background-color: #c6d7be;
 }
 
 main {
-  min-height: 100vh;
+  display: grid;
+  grid-area: content;
+  grid-template-columns: 250px 1fr;
+  grid-template-areas:
+    "sidebar list";
+}
 
+.stats {
+  grid-area: sidebar;
+  background-color: #b0c1a8;
+  border-right: solid 2px #a09477;
+}
+
+.stats-counter {
+  background-color: #dbe9d4;
+  margin: 2rem;
+  padding: 2rem;
+  padding-top: 1.2rem;
+  height: 12rem;
+  border-radius: 15px;
+  box-shadow: inset 00px 0px 30px -2px #bacbb2;
+  color: #38453a;
+  text-align: center;
+}
+
+.stats-counter h2 {
+  font-size: 32px;
+}
+
+.stats-counter p {
+  font-size: 18px;
+}
+
+.list {
+  background-color: #e4e4e4;
+  grid-area: list;
+}
+
+.list-top {
+  padding: 2rem;
+  display: grid;
+  grid-template-rows: 50px 50px;
+  color: #38453a;
+}
+
+.list-bottom {
+  border: none;
+  display: grid;
+  padding: 2rem;
+  padding-top: 0rem;
+}
+
+.list-bottom-items {
+  list-style-type: none;
+}
+
+.list-bottom-added-items {
   display: flex;
-  justify-content: center;
   align-items: center;
+}
+
+.list-bottom-items span {
+  background-color: white;
+  padding: 1rem;
+  border: none;
+  display: inline-block;
+  height: 3rem;
+  flex: 1;
+  color: #38453a;
+  vertical-align: bottom;
+  margin-bottom: 5px;
+}
+
+.list-bottom-items img {
+  height: 3rem;
+  width: 3rem;
+  display: inline-block;
+  vertical-align: baseline;
+  margin-bottom: 5px;
+}
+
+.checkbox {
+  background-color: white;
+  border: solid 12px white;
+}
+
+.remove {
+  background-color: white;
+  border: solid 12px white;
+}
+
+form {
+  grid-row-start: 2;
+  display: flex;
+}
+
+.form-input {
+  border: none;
+  height: 3rem;
+  width: 100%;
+  min-width: 170px;
+  padding: 1rem;
+  color: #38453a;
+}
+
+.form-submit {
+  background-color: #d7d6d6;
+  color: #38453a;
+  border: none;
+  height: 3rem;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 5px;
+}
+
+.list-bottom-items button:hover {
+  background-color: #c5c4c4;
+}
+
+.form-submit:hover {
+  background-color: #c5c4c4;
+}
+
+.done>span {
+  text-decoration: line-through;
+}
+
+.done>img.checkbox {
+  content: url("./images/checkbox-checked.svg");
 }
 
 /*
@@ -52,4 +229,19 @@ main {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+@media only screen and (max-width: 800px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-areas: "list"
+  }
+
+  .list {
+    grid-area: list;
+  }
+
+  .stats {
+    display: none;
+  }
 }

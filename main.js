@@ -1,44 +1,54 @@
 //
 //  JS File
-//  You may remove the code below - it's just boilerplate
 //
 
-//
-// Variables
-//
+const form = document.querySelector("#form");
+const item = document.querySelector("#form-input");
+const list = document.querySelector("#list-bottom-items");
+const denominator = document.querySelector("#denominator");
+const numerator = document.querySelector("#numerator");
 
-// Constants
-const appID = "app";
-const headingText = "To do. To done. ✅";
+form.addEventListener("submit", addToList);
 
-// Variables
+function addToList(event) {
+  event.preventDefault();
+  console.log(item.value);
+  console.log("Item added");
 
-// DOM Elements
-let appContainer = document.getElementById(appID);
+  const myList = document.createElement("li");
+  myList.classList.add("list-bottom-added-items");
+  const spanItem = document.createElement("span");
+  const removeItem = document.createElement("img");
+  const doneItem = document.createElement("img");
+  removeItem.addEventListener("click", removeFromList);
+  doneItem.addEventListener("click", markDone);
+  removeItem.src = "./images/remove.svg";
+  removeItem.classList.add("remove");
+  spanItem.textContent = `${item.value}`;
+  doneItem.src = "./images/checkbox-unchecked.svg";
+  doneItem.classList.add("checkbox");
+  list.appendChild(myList);
+  myList.appendChild(doneItem);
+  myList.appendChild(spanItem);
+  myList.appendChild(removeItem);
 
-//
-// Functions
-//
+  denominator.textContent = list.childElementCount;
 
-// Add a heading to the app container
-function inititialise() {
-  // If anything is wrong with the app container then end
-  if (!appContainer) {
-    console.error("Error: Could not find app contianer");
-    return;
-  }
 
-  // Create an h1 and add it to our app
-  const h1 = document.createElement("h1");
-  h1.innerText = headingText;
-  appContainer.appendChild(h1);
-
-  // Init complete
-  console.log("App successfully initialised");
+  form.reset();
 }
 
-//
-// Inits & Event Listeners
-//
+function removeFromList(event) {
+  event.preventDefault();
+  list.removeChild(this.parentElement);
 
-inititialise();
+  denominator.textContent = list.childElementCount;
+  numerator.textContent = list.querySelectorAll(".done").length;
+}
+
+function markDone (event) {
+  event.preventDefault();
+  this.parentElement.classList.add("done");
+  numerator.textContent = list.querySelectorAll(".done").length;
+
+}
