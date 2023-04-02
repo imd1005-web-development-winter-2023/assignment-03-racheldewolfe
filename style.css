@@ -13,16 +13,20 @@
 .body-wrapper {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   display: grid;
-  grid-template-rows: 2fr 18fr 20px;
+  grid-template-rows: 150px 3fr 20px;
   height: 100vh;
+
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
 }
 
 footer {
-  grid-row-start: 3;
+  grid-area: footer;
   text-align: center;
   font-size: 12px;
   background-color: white;
-  grid-column-start:1 ;
 }
 
 footer p {
@@ -37,10 +41,11 @@ header {
   grid-template-columns: 3fr 1fr;
   padding: 1rem;
   border-bottom: solid 2px #a09477;
+  grid-area: header;
 }
 
 .header-company h2 {
-  margin-top: 1.8rem;
+  margin-top: 2rem;
   font-size: 32px;
 }
 
@@ -53,19 +58,19 @@ header {
   margin-right: 1rem;
   width: 100px;
   height: 100px;
+  margin-top: 10px;
 }
 
 .header-buttons {
   grid-column-start: 2;
   display: flex;
   justify-content: flex-end;
-  margin-top: 1.7rem;
+  margin-top: 2rem;
 }
 
 .header-buttons button {
   background-color: #b0c1a8;
   color: #38453a;
-  /* color: #e4e4e4; */
   height: 40px;
   width: 100px;
   border-radius: 8px;
@@ -81,20 +86,16 @@ header {
 
 main {
   display: grid;
-  grid-template-columns: 1fr 4fr;
-  grid-row-start: 2;
-  grid-row-end: 3;
+  grid-area: content;
+  grid-template-columns: 250px 1fr;
+  grid-template-areas:
+    "sidebar content";
 }
 
 .stats {
-  grid-column-start: 1;
+  grid-area: sidebar;
   background-color: #b0c1a8;
   border-right: solid 2px #a09477;
-}
-
-.stats img {
-  width: 20rem;
-  height: 16.2rem;
 }
 
 .stats-counter {
@@ -118,29 +119,32 @@ main {
 }
 
 .list {
-  background-color:#e4e4e4
-  /* overflow */
+  background-color: #e4e4e4;
+  grid-area: content;
 }
+
 .list-top {
-  grid-column-start: 2;
   padding: 2rem;
   display: grid;
   grid-template-rows: 50px 50px;
   color: #38453a;
-  grid-template-columns: 4fr 1fr;
+  grid-template-columns: 1000px 30px;
 }
 
 .list-bottom {
-  grid-row-start: 3;
   border: none;
-  display:grid;
+  display: grid;
   padding: 2rem;
   padding-top: 0rem;
 }
 
-
 .list-bottom-items {
   list-style-type: none;
+}
+
+.list-bottom-added-items {
+  display: flex;
+  align-items: center;
 }
 
 .list-bottom-items span {
@@ -149,34 +153,29 @@ main {
   border: none;
   display: inline-block;
   height: 3rem;
-  width: 800px;
+  width: 56.5rem;
   color: #38453a;
-  vertical-align:bottom;
+  vertical-align: bottom;
   margin-bottom: 5px;
 }
 
 .list-bottom-items img {
-  height: 30px;
-  width: 30px;
+  height: 3rem;
+  width: 3rem;
   display: inline-block;
   vertical-align: baseline;
-}
-
-.list-bottom-items button {
-  background-color: #d7d6d6;
-  color: #38453a;
-  border: none;
-  height: 3rem;
-  width: 75px;
-  margin-left: 5px;
-  margin-right: 5px;
   margin-bottom: 5px;
 }
 
-.list-bottom-items button:hover {
-  background-color: #c5c4c4;
+.checkbox {
+  background-color: white;
+  border: solid 12px white;
 }
 
+.remove {
+  background-color: white;
+  border: solid 12px white;
+}
 
 form {
   grid-row-start: 2;
@@ -186,7 +185,7 @@ form {
 .form-input {
   border: none;
   height: 3rem;
-  width: 800px;
+  width: 100rem;
   padding: 1rem;
   color: #38453a;
 }
@@ -196,20 +195,24 @@ form {
   color: #38453a;
   border: none;
   height: 3rem;
-  width: 100px;
+  width: 10rem;
   margin-left: 5px;
+}
+
+.list-bottom-items button:hover {
+  background-color: #c5c4c4;
 }
 
 .form-submit:hover {
   background-color: #c5c4c4;
 }
 
-.done > span {
+.done>span {
   text-decoration: line-through;
 }
 
-.done > img.checkbox {
-  content:url("./images/checkbox-checked.svg");
+.done>img.checkbox {
+  content: url("./images/checkbox-checked.svg");
 }
 
 /*
@@ -228,30 +231,12 @@ form {
 }
 
 @media only screen and (max-width: 800px) {
-  .header-company h2 {
-    font-size: 28px;
-    margin-top: 1.2rem;
+  .main {
+    grid-template-columns: 250px 1fr;
+    grid-template-areas: "content content"
   }
 
-  .header-company img {
-    width: 80px;
-    height: 80px;
+  .list {
+    grid-area: content;
   }
-
-  .header-buttons {
-    margin-top: 1.7rem;
-  }
-  
-  .header-buttons button {
-    height: 40px;
-    width: 100px;
-    border-radius: 8px;
-    /* margin: 5px; */
 }
-}
-
-/* @media screen and (min-width: 800px) {
-  .header-company h2 {
-    font-size: 60px;
-  }
-} */

@@ -16,12 +16,14 @@ function addToList(event) {
   console.log("Item added");
 
   const myList = document.createElement("li");
+  myList.classList.add("list-bottom-added-items");
   const spanItem = document.createElement("span");
   const removeItem = document.createElement("img");
   const doneItem = document.createElement("img");
   removeItem.addEventListener("click", removeFromList);
   doneItem.addEventListener("click", markDone);
   removeItem.src = "./images/remove.svg";
+  removeItem.classList.add("remove");
   spanItem.textContent = `${item.value}`;
   doneItem.src = "./images/checkbox-unchecked.svg";
   doneItem.classList.add("checkbox");
