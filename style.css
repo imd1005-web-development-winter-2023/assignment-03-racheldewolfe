@@ -89,7 +89,7 @@ main {
   grid-area: content;
   grid-template-columns: 250px 1fr;
   grid-template-areas:
-    "sidebar content";
+    "sidebar list";
 }
 
 .stats {
@@ -120,7 +120,7 @@ main {
 
 .list {
   background-color: #e4e4e4;
-  grid-area: content;
+  grid-area: list;
 }
 
 .list-top {
@@ -128,7 +128,6 @@ main {
   display: grid;
   grid-template-rows: 50px 50px;
   color: #38453a;
-  grid-template-columns: 1000px 30px;
 }
 
 .list-bottom {
@@ -153,7 +152,7 @@ main {
   border: none;
   display: inline-block;
   height: 3rem;
-  width: 56.5rem;
+  flex: 1;
   color: #38453a;
   vertical-align: bottom;
   margin-bottom: 5px;
@@ -185,7 +184,8 @@ form {
 .form-input {
   border: none;
   height: 3rem;
-  width: 100rem;
+  width: 100%;
+  min-width: 170px;
   padding: 1rem;
   color: #38453a;
 }
@@ -195,7 +195,8 @@ form {
   color: #38453a;
   border: none;
   height: 3rem;
-  width: 10rem;
+  padding-left: 20px;
+  padding-right: 20px;
   margin-left: 5px;
 }
 
@@ -231,12 +232,16 @@ form {
 }
 
 @media only screen and (max-width: 800px) {
-  .main {
-    grid-template-columns: 250px 1fr;
-    grid-template-areas: "content content"
+  main {
+    grid-template-columns: 1fr;
+    grid-template-areas: "list"
   }
 
   .list {
-    grid-area: content;
+    grid-area: list;
+  }
+
+  .stats {
+    display: none;
   }
 }
